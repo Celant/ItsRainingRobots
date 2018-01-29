@@ -1,0 +1,14 @@
+{
+    "name": "ItsRainingRobots",
+    "author": {
+       "name": "Jish",
+       "email": "jish@flashylights.co.uk"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.com/celant/ItsRainingRobots.git"
+    },
+    "entryPoints": [
+        "itsrainingrobots.js"
+    ]
+}
