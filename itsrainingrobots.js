@@ -1,4 +1,5 @@
 var Discord = require("discord.js");
+var Roll = require("roll");
 var _ = require("lodash");
 
 class itsRainingRobotsModule {
@@ -13,6 +14,7 @@ class itsRainingRobotsModule {
 	}
 
 	init() {
+		this.bot.roll = new Roll();
 		this.registerCommands();
 	}
 
@@ -26,6 +28,11 @@ class itsRainingRobotsModule {
 		self.commands.addCommand({
 			trigger: "!pun",
 			function: self.punCommand,
+			permCheck: self.perms.pass
+		});
+		self.commands.addCommand({
+			trigger: "!roll",
+			function: self.rollCommand,
 			permCheck: self.perms.pass
 		});
 	}
@@ -47,6 +54,31 @@ class itsRainingRobotsModule {
 
 			msg.reply("You incremented the pun counter, there has been " + total + " terrible puns! :cactus:");
                 });
+	}
+
+	rollCommand(msg) {
+		var self = this;
+
+		if (msg.parts[1]) {
+			try {
+				var rollResult = self.bot.roll.roll(msg.parts[1]);
+
+				if (rollResult.rolled) {
+					var joinedRoll = rollResult.rolled.join(', ');
+
+					if (joinedRoll.length <= 1800) {
+						msg.reply("you rolled `" + msg.parts[1] + "` and got: `" + joinedRoll + "` :game_die:");
+					} else {
+						msg.reply("nice roll and stuff but that resulted in more than 1800 characters, which upsets discord :slight_frown:");
+					}
+				} else {
+					msg.reply("you rolled `" + msg.parts[1] + "` and not only is that incomprehensible gibberish, but it's so much gibberish you got past my error checking. Critical fail at life :poop:");
+				}
+
+			} catch (err) {
+				msg.reply("you rolled `" + msg.parts[1] + "` but that is incomprehensible gibberish, so you critical fail at life :poop:");
+			}
+		}
 	}
 
 }
