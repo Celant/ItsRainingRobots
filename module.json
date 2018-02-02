@@ -9,6 +9,7 @@
         "url": "https://gitlab.com/celant/ItsRainingRobots.git"
     },
     "entryPoints": [
-        "itsrainingrobots.js"
+        "itsrainingrobots.js",
+        "quotes"
     ]
 }

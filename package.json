@@ -1,0 +1,22 @@
+{
+  "name": "itsrainingrobots",
+  "version": "1.0.0",
+  "description": "A module for FlashyLights/Discoball built for the ItsRainingNeon community",
+  "main": "itsrainingrobots.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Celant/ItsRainingRobots.git"
+  },
+  "author": "Josh Harris <me@celant.co.uk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Celant/ItsRainingRobots/issues"
+  },
+  "homepage": "https://github.com/Celant/ItsRainingRobots#readme",
+  "dependencies": {
+    "droll": "^0.2.1"
+  }
+}
