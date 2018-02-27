@@ -62,7 +62,7 @@ class itsRainingRobotsModule {
 			if (droll.validate(msg.parts[1])) {
 				var rollResult = droll.roll(msg.parts[1]);
 
-				if (rollresult.rolls) {
+				if (rollResult.rolls) {
 					var joinedRoll = rollResult.rolls.join(', ');
 
 					if (joinedRoll.length <= 1800) {
